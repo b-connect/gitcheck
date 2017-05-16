@@ -1,7 +1,5 @@
-#!/usr/bin/env php
 <?php
-
-require_once './vendor/autoload.php';
+namespace bconnect;
 
 use Bit3\GitPhp\GitRepository;
 use Webmozart\Glob\Glob;
@@ -16,7 +14,7 @@ class GitCheck {
         foreach ($config->exclude as $ex) {
             foreach ($status as $key => $s) {
                 if (Glob::match(Path::makeAbsolute($key, getcwd()), Path::makeAbsolute($ex, getcwd()))) {
-                unset($status[$key]);
+                    unset($status[$key]);
                 }
             }
         }
