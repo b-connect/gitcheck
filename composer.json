@@ -6,6 +6,11 @@
         "webmozart/glob": "^4.1"
     },
     "bin": ["bin/gitcheck"],
+     "autoload": {
+        "psr-4": {
+          "bconnect\\": "src/"
+        }
+    },
     "authors": [
         {
             "name": "Erik Seifert",
