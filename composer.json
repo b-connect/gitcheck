@@ -7,7 +7,7 @@
     "bin": ["bin/gitcheck"],
      "autoload": {
         "psr-4": {
-          "bconnect\\": "src/"
+          "bconnect\\": "src/bconnect"
         }
     },
     "minimum-stability": "dev",
