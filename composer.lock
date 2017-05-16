@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e71bc784ebe25d32b16ae55c1b582484",
+    "content-hash": "5da26e15ef4b68035b38d5d8a7607254",
     "packages": [
         {
             "name": "bit3/git-php",
@@ -144,6 +144,46 @@
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
             "time": "2017-04-12T14:13:17+00:00"
+        },
+        {
+            "name": "ulrichsg/getopt-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ulrichsg/getopt-php.git",
+                "reference": "4939d6b4ce9b4d638c7549f57c5054b202da63e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ulrichsg/getopt-php/zipball/4939d6b4ce9b4d638c7549f57c5054b202da63e6",
+                "reference": "4939d6b4ce9b4d638c7549f57c5054b202da63e6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Ulrichsg\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ulrich Schmidt-Goertz",
+                    "email": "ulrich@schmidt-goertz.de"
+                }
+            ],
+            "description": "Command line arguments parser for PHP 5.3",
+            "homepage": "http://ulrichsg.github.io/getopt-php",
+            "time": "2015-06-28 18:00:37"
         },
         {
             "name": "webmozart/assert",
@@ -291,8 +331,10 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "ulrichsg/getopt-php": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

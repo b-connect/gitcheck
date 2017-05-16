@@ -2,7 +2,8 @@
     "name": "bconnect/gitcheck",
     "require": {
         "bit3/git-php": "^1.4",
-        "webmozart/glob": "^4.1"
+        "webmozart/glob": "^4.1",
+        "ulrichsg/getopt-php": "dev-master"
     },
     "bin": ["bin/gitcheck"],
      "autoload": {

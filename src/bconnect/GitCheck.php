@@ -6,8 +6,8 @@ use Webmozart\Glob\Glob;
 use Webmozart\PathUtil\Path;
 
 class GitCheck {
-    public function run() {
-        $config = json_decode(file_get_contents(getcwd() . '/config.json'));
+    public function run($options) {
+        $config = json_decode(file_get_contents(realpath($options['config'])));
         $git = new GitRepository($config->root);
         $status = $git->status()->getStatus();
 
@@ -17,6 +17,10 @@ class GitCheck {
                     unset($status[$key]);
                 }
             }
+        }
+
+        if (isset($options['verbose'])) {
+            print_r($status);
         }
 
         http_response_code(200);

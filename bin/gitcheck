@@ -9,10 +9,23 @@ if (file_exists(__DIR__ . '/../../../autoload.php')) {
 }
 
 use bconnect\GitCheck;
+use Ulrichsg\Getopt\Getopt;
+use Ulrichsg\Getopt\Option;
+use Ulrichsg\Getopt\Argument;
+
+$getopt = new Getopt([
+    (new Option('c', 'config', Getopt::REQUIRED_ARGUMENT))
+        ->setArgument(new Argument('./config.json', 'file_exists'))
+        ->setDescription('Config file to parse'),
+    (new Option(null, 'verbose'))
+        ->setDescription('Verbose output'),
+]);
+
 
 try {
+    $getopt->parse();
     $app = new GitCheck();
-    $app->run();
+    $app->run($getopt->getOptions());
 } catch (Exception $exception) {
     printf('Error: %s' . PHP_EOL, $exception->getMessage());
     exit(9);
