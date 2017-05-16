@@ -11,7 +11,7 @@
           "bconnect\\": "src/bconnect"
         }
     },
-    "minimum-stability": "dev-master",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Erik Seifert",
