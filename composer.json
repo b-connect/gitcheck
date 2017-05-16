@@ -2,8 +2,10 @@
     "name": "bconnect/gitcheck",
     "type": "project",
     "require": {
-        "bit3/git-php": "^1.4"
+        "bit3/git-php": "^1.4",
+        "webmozart/glob": "^4.1"
     },
+    "bin": ["bin/gitcheck"],
     "authors": [
         {
             "name": "Erik Seifert",

@@ -1,13 +1,30 @@
+#!/usr/bin/env php
 <?php
 
 require_once './vendor/autoload.php';
 
 use Bit3\GitPhp\GitRepository;
+use Webmozart\Glob\Glob;
+use Webmozart\PathUtil\Path;
 
-$config = json_decode(file_get_contents('./config.json'));
+class GitCheck {
+    public function run() {
+        $config = json_decode(file_get_contents(getcwd() . '/config.json'));
+        $git = new GitRepository($config->root);
+        $status = $git->status()->getStatus();
 
-$git = new GitRepository($config->root);
+        foreach ($config->exclude as $ex) {
+            foreach ($status as $key => $s) {
+                if (Glob::match(Path::makeAbsolute($key, getcwd()), Path::makeAbsolute($ex, getcwd()))) {
+                unset($status[$key]);
+                }
+            }
+        }
 
-$status = $git->status()->getStatus();
+        http_response_code(200);
 
-print_r($status);
+        if (count($status) > 0) {
+            http_response_code(500);
+        }
+    }
+}
