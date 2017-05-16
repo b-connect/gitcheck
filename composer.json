@@ -3,7 +3,7 @@
     "require": {
         "bit3/git-php": "^1.4",
         "webmozart/glob": "^4.1",
-        "ulrichsg/getopt-php": "dev-master"
+        "ulrichsg/getopt-php": "^2.3"
     },
     "bin": ["bin/gitcheck"],
      "autoload": {
@@ -11,7 +11,7 @@
           "bconnect\\": "src/bconnect"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Erik Seifert",
